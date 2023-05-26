@@ -126,7 +126,7 @@ const searchMovies = async () => {
 const searchMoviesDebounced = debounce(searchMovies, 200);
 
 const fetchMoviesPopular = async () => {
-	const { data } = await axios.get('movie/top_rated/');
+	const { data } = await axios.get('movie/top_rated');
 	moviesPopular.value = data.results;
 };
 onMounted(() => {
