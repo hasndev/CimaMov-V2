@@ -6,7 +6,7 @@
 			<div class="mt-4">
 				<p class="text-gray-700">
 					<span class="font-bold">
-						Rating: {{ (movie.vote_average * 10).toFixed(1) }}%
+						Rating: {{ (movie.vote_average.toFixed(1) * 10) }}%
 					</span> -
 					<span class="font-bold">
 						{{ formattedReleaseDate }}
