@@ -35,7 +35,7 @@
 													<h3 class="text-xl font-bold">{{ movie.title }}</h3>
 													<p class="text-White-700">
 														<span>
-															Vote:
+															Rating:
 															{{ (movie.vote_average.toFixed(1) * 10) }}%
 														</span> -
 														<span>
