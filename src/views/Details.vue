@@ -31,7 +31,7 @@
 						<div class="flex items-center mb-4">
 							<span class="mr-2">Rating:</span>
 							<span class="text-yellow-500 flex justify-between">
-								{{ movie.vote_average }}/10
+								{{ movie.vote_average.toFixed(1) }}/10
 								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
 									stroke="currentColor" class="w-6 h-6">
 									<path stroke-linecap="round" stroke-linejoin="round"
@@ -55,7 +55,8 @@
 
 						<div class="mt-8">
 							<h3 class="text-2xl font-bold mb-4">Additional Information</h3>
-							<p><span class="font-bold">Original Language:</span> {{ movie.original_language }}</p>
+							<p><span class="font-bold">Original Language:</span> {{
+								capitalizedLanguage(movie.original_language) }}</p>
 						</div>
 					</div>
 				</div>
@@ -78,7 +79,7 @@
 													Rating: {{ (movie.vote_average.toFixed(1) * 10) }}%
 												</span> -
 												<span class="font-bold">
-													formatDate(movie.release_date)
+													{{ formatDate(movie.release_date) }}
 												</span>
 											</p>
 										</div>
@@ -132,6 +133,13 @@ const formatDuration = (minutes) => {
 const formatDate = (date) => {
 	const options = { year: 'numeric', month: 'long', day: 'numeric' };
 	return new Date(date).toLocaleDateString(undefined, options);
+};
+
+const capitalizedLanguage = (original_language) => {
+	if (original_language) {
+		return original_language.toUpperCase();
+	}
+	return '';
 };
 
 onMounted(() => {
