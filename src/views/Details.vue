@@ -78,7 +78,7 @@
 													Rating: {{ (movie.vote_average.toFixed(1) * 10) }}%
 												</span> -
 												<span class="font-bold">
-													{{ formattedReleaseDate }}
+													formatDate(movie.release_date)
 												</span>
 											</p>
 										</div>
