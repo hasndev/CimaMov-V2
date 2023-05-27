@@ -17,7 +17,7 @@
 		</header>
 
 		<!-- Movie Details -->
-		<div class="container mx-auto px-4 py-8 space-y-4">
+		<div class="bg-gray-900 container mx-auto px-4 py-8 space-y-4">
 			<!-- Movie Content -->
 			<div v-if="movie">
 				<div class="flex flex-col md:flex-row pb-4">
